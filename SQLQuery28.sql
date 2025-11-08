@@ -1,0 +1,6 @@
+SELECT TOP (1000) [Id]
+      ,[Nome]
+      ,[Email]
+      ,[SenhaHash]
+      ,[Perfil]
+  FROM [ImobiliariaDb].[dbo].[Users]
