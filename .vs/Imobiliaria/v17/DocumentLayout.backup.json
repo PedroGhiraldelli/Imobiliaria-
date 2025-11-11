@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|c:\\users\\bitlabz\\documents\\software imobiliaria\\imobiliaria\\imobiliaria\\models\\imovelcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|solutionrelative:imobiliaria\\models\\imovelcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|c:\\users\\bitlabz\\documents\\software imobiliaria\\imobiliaria\\imobiliaria\\controllers\\imovelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|solutionrelative:imobiliaria\\controllers\\imovelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|c:\\users\\bitlabz\\documents\\software imobiliaria\\imobiliaria\\imobiliaria\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|solutionrelative:imobiliaria\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|c:\\users\\bitlabz\\documents\\software imobiliaria\\imobiliaria\\imobiliaria\\models\\fotos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|solutionrelative:imobiliaria\\models\\fotos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|c:\\users\\bitlabz\\documents\\software imobiliaria\\imobiliaria\\imobiliaria\\models\\imovel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|solutionrelative:imobiliaria\\models\\imovel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|c:\\users\\bitlabz\\documents\\software imobiliaria\\imobiliaria\\imobiliaria\\migrations\\20251110161200_atualizamodelos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|solutionrelative:imobiliaria\\migrations\\20251110161200_atualizamodelos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|c:\\users\\bitlabz\\documents\\software imobiliaria\\imobiliaria\\imobiliaria\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|solutionrelative:imobiliaria\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9CCB5C4F-6767-4C7B-9B53-6FE66E64B3C4}|Imobiliaria\\Imobiliaria.csproj|c:\\users\\bitlabz\\documents\\software imobiliaria\\imobiliaria\\imobiliaria\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,11 +42,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "fotos.cs",
+              "DocumentMoniker": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Models\\fotos.cs",
+              "RelativeDocumentMoniker": "Imobiliaria\\Models\\fotos.cs",
+              "ToolTip": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Models\\fotos.cs",
+              "RelativeToolTip": "Imobiliaria\\Models\\fotos.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAUwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T22:01:20.868Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "20251110161200_AtualizaModelos.cs",
+              "DocumentMoniker": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Migrations\\20251110161200_AtualizaModelos.cs",
+              "RelativeDocumentMoniker": "Imobiliaria\\Migrations\\20251110161200_AtualizaModelos.cs",
+              "ToolTip": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Migrations\\20251110161200_AtualizaModelos.cs",
+              "RelativeToolTip": "Imobiliaria\\Migrations\\20251110161200_AtualizaModelos.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAowCEAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-10T16:15:52.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ImovelCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Models\\ImovelCreateDto.cs",
+              "RelativeDocumentMoniker": "Imobiliaria\\Models\\ImovelCreateDto.cs",
+              "ToolTip": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Models\\ImovelCreateDto.cs",
+              "RelativeToolTip": "Imobiliaria\\Models\\ImovelCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T18:33:25.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ImovelController.cs",
+              "DocumentMoniker": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Controllers\\ImovelController.cs",
+              "RelativeDocumentMoniker": "Imobiliaria\\Controllers\\ImovelController.cs",
+              "ToolTip": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Controllers\\ImovelController.cs",
+              "RelativeToolTip": "Imobiliaria\\Controllers\\ImovelController.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAIwFsAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T04:45:37.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Imovel.cs",
+              "DocumentMoniker": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Models\\Imovel.cs",
+              "RelativeDocumentMoniker": "Imobiliaria\\Models\\Imovel.cs",
+              "ToolTip": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Models\\Imovel.cs",
+              "RelativeToolTip": "Imobiliaria\\Models\\Imovel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAADwvy8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T04:05:49.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Imobiliaria\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Imobiliaria\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T03:29:31.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Models\\User.cs",
               "RelativeDocumentMoniker": "Imobiliaria\\Models\\User.cs",
@@ -30,18 +132,17 @@
               "RelativeToolTip": "Imobiliaria\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T16:59:53.512Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T16:59:53.512Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Program.cs",
               "RelativeDocumentMoniker": "Imobiliaria\\Program.cs",
               "ToolTip": "C:\\Users\\bitlabz\\Documents\\Software Imobiliaria\\Imobiliaria\\Imobiliaria\\Program.cs",
               "RelativeToolTip": "Imobiliaria\\Program.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAAEEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-05T18:04:48.282Z",
               "EditorCaption": ""

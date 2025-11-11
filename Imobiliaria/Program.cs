@@ -7,7 +7,23 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuração de Autenticação JWT
+// CORS para React na porta 3000 e arquivos estáticos
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReact", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000") // troque aqui se necessário
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
+// JWT Authentication
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -28,31 +44,20 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// Configuração do DbContext
+// Banco
 builder.Services.AddDbContext<ImobiliariaDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configuração do CORS - DEVE vir ANTES de AddControllers
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowReact", policy =>
-    {
-        policy.WithOrigins("http://localhost:3000")
-              .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials();
-    });
-});
-
+// Controllers e JSON
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
-        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;  // ← ADICIONE ISSO
+        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
     });
 
 builder.Services.AddEndpointsApiExplorer();
 
-// Configuração do Swagger
+// Swagger
 builder.Services.AddSwaggerGen(c =>
 {
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -63,7 +68,6 @@ builder.Services.AddSwaggerGen(c =>
         Type = SecuritySchemeType.ApiKey,
         Scheme = "Bearer"
     });
-
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -82,23 +86,21 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// Configuração do pipeline de requisição
-// A ORDEM É IMPORTANTE!
-
-// 1. Swagger (apenas em desenvolvimento)
+// 1. Swagger
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-// 2. CORS - ANTES de Authentication
+// 2. CORS: Permita React acessar API e imagens usando "AllowReact"
 app.UseCors("AllowReact");
 
-// 3. Authentication - ANTES de Authorization
-app.UseAuthentication();
+// 3. Static Files: Permite acesso a wwwroot e suas subpastas (ex: /fotos)
+app.UseStaticFiles(); // tem que estar aqui
 
-// 4. Authorization
+// 4. Autenticação e Autorização
+app.UseAuthentication();
 app.UseAuthorization();
 
 // 5. Controllers

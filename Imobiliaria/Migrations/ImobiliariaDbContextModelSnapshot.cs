@@ -22,7 +22,7 @@ namespace Imobiliaria.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Imobiliaria.Foto", b =>
+            modelBuilder.Entity("Imobiliaria.Models.Foto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -44,7 +44,7 @@ namespace Imobiliaria.Migrations
                     b.ToTable("Fotos");
                 });
 
-            modelBuilder.Entity("Imobiliaria.Imovel", b =>
+            modelBuilder.Entity("Imobiliaria.Models.Imovel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -80,12 +80,37 @@ namespace Imobiliaria.Migrations
                     b.Property<bool>("TemGaragem")
                         .HasColumnType("bit");
 
+                    b.Property<int>("VagasGaragem")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Imoveis");
                 });
 
-            modelBuilder.Entity("Imobiliaria.User", b =>
+            modelBuilder.Entity("Imobiliaria.Models.ImovelFoto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ImovelId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ImovelId");
+
+                    b.ToTable("ImovelFoto");
+                });
+
+            modelBuilder.Entity("Imobiliaria.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -114,9 +139,50 @@ namespace Imobiliaria.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Imobiliaria.Foto", b =>
+            modelBuilder.Entity("Imobiliaria.Visita", b =>
                 {
-                    b.HasOne("Imobiliaria.Imovel", "Imovel")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataAgendamento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ImovelId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UsuarioEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UsuarioId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ImovelId");
+
+                    b.HasIndex("UsuarioId");
+
+                    b.ToTable("Visitas");
+                });
+
+            modelBuilder.Entity("Imobiliaria.Models.Foto", b =>
+                {
+                    b.HasOne("Imobiliaria.Models.Imovel", "Imovel")
+                        .WithMany()
+                        .HasForeignKey("ImovelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Imovel");
+                });
+
+            modelBuilder.Entity("Imobiliaria.Models.ImovelFoto", b =>
+                {
+                    b.HasOne("Imobiliaria.Models.Imovel", "Imovel")
                         .WithMany("Fotos")
                         .HasForeignKey("ImovelId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -125,7 +191,26 @@ namespace Imobiliaria.Migrations
                     b.Navigation("Imovel");
                 });
 
-            modelBuilder.Entity("Imobiliaria.Imovel", b =>
+            modelBuilder.Entity("Imobiliaria.Visita", b =>
+                {
+                    b.HasOne("Imobiliaria.Models.Imovel", "Imovel")
+                        .WithMany()
+                        .HasForeignKey("ImovelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Imobiliaria.Models.User", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Imovel");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("Imobiliaria.Models.Imovel", b =>
                 {
                     b.Navigation("Fotos");
                 });

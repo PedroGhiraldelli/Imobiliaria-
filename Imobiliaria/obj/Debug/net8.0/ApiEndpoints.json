@@ -43,16 +43,56 @@
   },
   {
     "ContainingType": "Imobiliaria.Controllers.ImovelController",
-    "Method": "Create",
+    "Method": "Post",
     "RelativePath": "api/Imovel",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "imovel",
-        "Type": "Imobiliaria.Models.Imovel",
-        "IsRequired": true
+        "Name": "Endereco",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Preco",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Area",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "NumeroQuartos",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "NumeroBanheiros",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TemGaragem",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "VagasGaragem",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descricao",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Imagens",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -87,9 +127,49 @@
         "IsRequired": true
       },
       {
-        "Name": "imovel",
-        "Type": "Imobiliaria.Models.Imovel",
-        "IsRequired": true
+        "Name": "Endereco",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Preco",
+        "Type": "System.Decimal",
+        "IsRequired": false
+      },
+      {
+        "Name": "Area",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "NumeroQuartos",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "NumeroBanheiros",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TemGaragem",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "VagasGaragem",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descricao",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Imagens",
+        "Type": "System.Collections.Generic.List\u00601[[Microsoft.AspNetCore.Http.IFormFile, Microsoft.AspNetCore.Http.Features, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -157,6 +237,32 @@
     "Parameters": [
       {
         "Name": "imovelId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserController",
+    "Method": "GetAll",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UserController",
+    "Method": "Delete",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }

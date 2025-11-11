@@ -2,11 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
-import Navbar from './components/Navbar';
+import Header from './components/Header';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Home from './pages/Home';
+import HomePage from './pages/HomePage';
 import ImovelList from './pages/ImovelList';
+import AdminDashboard from './pages/AdminDashboard';
+import ContatoPage from './pages/ContatoPage';
 import './App.css';
 
 function App() {
@@ -14,25 +16,32 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="App">
-          <Navbar />
-          
-          <div style={{ minHeight: 'calc(100vh - 60px)' }}>
+          {/* Cabeçalho fixo em todas as páginas */}
+          <Header />
+          <div style={{ minHeight: 'calc(100vh - 72px)' }}>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              
-              {/* Rotas protegidas - requerem autenticação */}
+              <Route path="/contato" element={<ContatoPage />} />
+              {/* Rotas protegidas - autenticação obrigatória */}
               <Route 
                 path="/imoveis" 
                 element={
                   <ProtectedRoute>
                     <ImovelList />
                   </ProtectedRoute>
-                } 
+                }
               />
-              
-              {/* Rota padrão - redireciona para home */}
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRoute requiredRole="admin">
+                    <AdminDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              {/* Rota padrão - redireciona para homepage */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </div>

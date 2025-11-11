@@ -17,19 +17,13 @@ export const login = async (email, senha) => {
 };
 
 // Função de registro
-export const register = async (nome, email, senha, perfil) => {
-  try {
-    const response = await api.post('/auth/register', { 
-      nome: nome,
-      email: email,
-      senhaHash: senha,
-      perfil: perfil.toLowerCase()
-    });
-    return response.data;
-  } catch (error) {
-    console.error('Erro ao registrar:', error.response?.data || error);
-    throw error.response?.data || 'Erro ao registrar usuário';
-  }
+export const register = async (nome, email, senha) => {
+  return await api.post('/auth/register', {
+    nome,
+    email,
+    senhaHash: senha, // campo esperado no backend
+    perfil: 'usuario' // força sempre usuario
+  });
 };
 
 // Função de logout

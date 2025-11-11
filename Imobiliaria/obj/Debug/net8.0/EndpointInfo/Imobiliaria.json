@@ -84,19 +84,76 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/Imovel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Imovel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Imovel"
+                "type": "object",
+                "properties": {
+                  "Endereco": {
+                    "type": "string"
+                  },
+                  "Preco": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Area": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "NumeroQuartos": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NumeroBanheiros": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TemGaragem": {
+                    "type": "boolean"
+                  },
+                  "VagasGaragem": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Descricao": {
+                    "type": "string"
+                  },
+                  "Imagens": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "Endereco": {
+                  "style": "form"
+                },
+                "Preco": {
+                  "style": "form"
+                },
+                "Area": {
+                  "style": "form"
+                },
+                "NumeroQuartos": {
+                  "style": "form"
+                },
+                "NumeroBanheiros": {
+                  "style": "form"
+                },
+                "TemGaragem": {
+                  "style": "form"
+                },
+                "VagasGaragem": {
+                  "style": "form"
+                },
+                "Descricao": {
+                  "style": "form"
+                },
+                "Imagens": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -147,19 +204,76 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/Imovel"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Imovel"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Imovel"
+                "type": "object",
+                "properties": {
+                  "Endereco": {
+                    "type": "string"
+                  },
+                  "Preco": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "Area": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "NumeroQuartos": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "NumeroBanheiros": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "TemGaragem": {
+                    "type": "boolean"
+                  },
+                  "VagasGaragem": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Descricao": {
+                    "type": "string"
+                  },
+                  "Imagens": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                }
+              },
+              "encoding": {
+                "Endereco": {
+                  "style": "form"
+                },
+                "Preco": {
+                  "style": "form"
+                },
+                "Area": {
+                  "style": "form"
+                },
+                "NumeroQuartos": {
+                  "style": "form"
+                },
+                "NumeroBanheiros": {
+                  "style": "form"
+                },
+                "TemGaragem": {
+                  "style": "form"
+                },
+                "VagasGaragem": {
+                  "style": "form"
+                },
+                "Descricao": {
+                  "style": "form"
+                },
+                "Imagens": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -278,6 +392,41 @@
         }
       }
     },
+    "/api/User": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/{id}": {
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -337,69 +486,6 @@
           "imovelId": {
             "type": "integer",
             "format": "int32"
-          },
-          "imovel": {
-            "$ref": "#/components/schemas/Imovel"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Imovel": {
-        "required": [
-          "area",
-          "endereco",
-          "numeroBanheiros",
-          "numeroQuartos",
-          "preco",
-          "temGaragem"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "endereco": {
-            "maxLength": 200,
-            "minLength": 0,
-            "type": "string"
-          },
-          "preco": {
-            "minimum": 0,
-            "type": "number",
-            "format": "double"
-          },
-          "descricao": {
-            "maxLength": 1000,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "area": {
-            "type": "number",
-            "format": "double"
-          },
-          "numeroQuartos": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "numeroBanheiros": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "temGaragem": {
-            "type": "boolean"
-          },
-          "dataCadastro": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "fotos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Foto"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false

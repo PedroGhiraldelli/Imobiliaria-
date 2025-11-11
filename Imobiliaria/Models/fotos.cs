@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization; // adicione este using
 
 namespace Imobiliaria.Models
 {
@@ -13,7 +14,7 @@ namespace Imobiliaria.Models
 
         [ForeignKey("Imovel")]
         public int ImovelId { get; set; }
-
+        [JsonIgnore]
         public Imovel Imovel { get; set; }
     }
 }

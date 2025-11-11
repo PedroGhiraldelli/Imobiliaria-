@@ -170,4 +170,6 @@ C:\Users\bitlabz\Documents\Software Imobiliaria\Imobiliaria\Imobiliaria\bin\Debu
 C:\Users\bitlabz\Documents\Software Imobiliaria\Imobiliaria\Imobiliaria\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\bitlabz\Documents\Software Imobiliaria\Imobiliaria\Imobiliaria\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\bitlabz\Documents\Software Imobiliaria\Imobiliaria\Imobiliaria\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\bitlabz\Documents\Software Imobiliaria\Imobiliaria\Imobiliaria\obj\Debug\net8.0\Imobiliaria.sourcelink.json
+C:\Users\bitlabz\Documents\Software Imobiliaria\Imobiliaria\Imobiliaria\bin\Debug\net8.0\Imobiliaria.staticwebassets.runtime.json
 C:\Users\bitlabz\Documents\Software Imobiliaria\Imobiliaria\Imobiliaria\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

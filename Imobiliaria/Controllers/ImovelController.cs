@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Imobiliaria.Infrastructure;
 using Imobiliaria.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore; // Importante para usar .Include
 
 namespace Imobiliaria.Controllers
 {
@@ -22,7 +24,9 @@ namespace Imobiliaria.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            var imoveis = _context.Imoveis.ToList();
+            var imoveis = _context.Imoveis
+                .Include(i => i.Fotos) // Inclui as fotos no retorno
+                .ToList();
             return Ok(imoveis);
         }
 
@@ -31,7 +35,9 @@ namespace Imobiliaria.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var imovel = _context.Imoveis.Find(id);
+            var imovel = _context.Imoveis
+                .Include(i => i.Fotos) // Inclui fotos também ao buscar por ID
+                .FirstOrDefault(i => i.Id == id);
             if (imovel == null) return NotFound();
             return Ok(imovel);
         }
@@ -39,17 +45,51 @@ namespace Imobiliaria.Controllers
         // POST: api/imovel
         [Authorize(Roles = "admin")]
         [HttpPost]
-        public IActionResult Create([FromBody] Imovel imovel)
+        public async Task<IActionResult> Post([FromForm] ImovelCreateDto imovel)
         {
-            _context.Imoveis.Add(imovel);
-            _context.SaveChanges();
-            return CreatedAtAction(nameof(GetById), new { id = imovel.Id }, imovel);
+            // Salvar os dados básicos
+            var novoImovel = new Imovel
+            {
+                Endereco = imovel.Endereco,
+                Preco = imovel.Preco,
+                Area = imovel.Area,
+                NumeroQuartos = imovel.NumeroQuartos,
+                NumeroBanheiros = imovel.NumeroBanheiros,
+                TemGaragem = imovel.TemGaragem,
+                VagasGaragem = imovel.VagasGaragem,
+                Descricao = imovel.Descricao,
+                Fotos = new List<Foto>()
+            };
+
+            // Salvar imagens
+            if (imovel.Imagens != null)
+            {
+                foreach (var file in imovel.Imagens)
+                {
+                    if (file.Length > 0)
+                    {
+                        // Exemplo: Salva no disco/local e guarda URL
+                        var filePath = Path.Combine("wwwroot/fotos", file.FileName);
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await file.CopyToAsync(stream);
+                        }
+                        string url = "/fotos/" + file.FileName;
+                        novoImovel.Fotos.Add(new Foto { Url = url });
+                    }
+                }
+            }
+
+            _context.Imoveis.Add(novoImovel);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetById), new { id = novoImovel.Id }, novoImovel);
         }
 
         // PUT: api/imovel/{id}
         [Authorize(Roles = "admin")]
         [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody] Imovel imovel)
+        public IActionResult Update(int id, [FromForm] ImovelCreateDto imovel)
         {
             var existing = _context.Imoveis.Find(id);
             if (existing == null) return NotFound();
